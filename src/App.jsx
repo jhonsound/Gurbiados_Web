@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Box, Toolbar } from "@mui/material";
 import Footer from "./components/Layout/Footer";
 import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 
 function App() {
   return (
@@ -11,7 +13,7 @@ function App() {
         sx={{
           display: "flex",
           flexDirection: "column",
-          minHeight: "100vh"
+          minHeight: "100vh",
         }}
       >
         <Navbar />
@@ -19,6 +21,8 @@ function App() {
         <Box component={"main"} flexGrow={1}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
           </Routes>
         </Box>
         <Footer />

@@ -1,7 +1,7 @@
-import React, { useState } from "react";
 import { Box } from "@mui/material";
-import FormPay from "../components/Home & Layout/FormPay";
+import React, { useState } from "react";
 import { Logo } from "../components/Home & Layout/Logo";
+import FormPay from "../components/Home & Layout/FormPay";
 import { ContainerProduct } from "../components/Home & Layout/ContainerProduct";
 import { ModalProduct } from "../components/Home & Layout/ModalProduct";
 

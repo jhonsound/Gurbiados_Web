@@ -19,24 +19,26 @@ const FormPay = ({ selectedProduct }) => {
         </Typography>
         <Grid container spacing={2} sx={{ mt: 2 }}>
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label="Nombre Completo" name="name" />
+            <TextField fullWidth label="Nombre Completo" name="name" color="warning"/>
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label="Numero de Contacto" name="phone" />
+            <TextField fullWidth label="Numero de Contacto" name="phone" color="warning"/>
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
               label="Direccion de Domicilio"
               name="direction"
+              color="warning"
             />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField fullWidth label="Correo Electronico" name="email" />
+            <TextField fullWidth label="Correo Electronico" name="email" color="warning"/>
           </Grid>
           <Grid item xs={12} sm={6}>
             <TextField
               fullWidth
+              color="warning"
               value={amount === 0 ? "" : amount}
               onChange={(e) => setAmount(Number(e.target.value))}
               label="Cantidad"
