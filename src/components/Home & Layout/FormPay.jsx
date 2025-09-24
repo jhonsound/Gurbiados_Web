@@ -33,14 +33,13 @@ const FormPay = ({ selectedProduct, setOrder, order, setOrderData, setOpenSucces
     const orderData = {
       name: order.name,
       phone: order.phone,
-      correemailo: order.email,
+      email: order.email,
       direction: order.direction,
       productTitle: selectedProduct.title,
       priceProduct: selectedProduct.price,
-      id: selectedProduct.id,
+      productId: selectedProduct.id,
       amount: amount,
       total: calculateTotal(amount, selectedProduct.price),
-      identificador_empresa: 1
     };
     setOrderData(orderData);
     setOpenSuccess(true);

@@ -34,8 +34,7 @@ export function Home() {
   return (
     <Box
       sx={{
-        backgroundImage: "url(/src/assets/guabidos1.jpeg)",
-        backgroundSize: "cover",
+        
         minHeight: "90vh",
         position: "relative",
       zIndex: 1,

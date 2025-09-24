@@ -62,9 +62,9 @@ export const products = [
 
 export const menuItems = [
   { text: "Inicio", path: "/" },
-  { text: "Catalogo", path: "/catalog" },
-  { text: "Servicios", path: "/services" },
-  { text: "Contacto", path: "/contact" },
+  /* { text: "Catalogo", path: "/catalog" },
+  { text: "Servicios", path: "/services" }, 
+  { text: "Contacto", path: "/contact" },*/
   { text: "Acerca de", path: "/about" },
   { text: "Clientes", path: "/clients" },
 ];

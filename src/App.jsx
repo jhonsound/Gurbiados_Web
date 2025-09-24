@@ -16,6 +16,8 @@ function App() {
           display: "flex",
           flexDirection: "column",
           minHeight: "100vh",
+          backgroundImage: "url(/src/assets/guabidos1.jpeg)",
+          backgroundSize: "cover",
         }}
       >
         <Navbar />
