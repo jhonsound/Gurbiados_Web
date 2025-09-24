@@ -66,4 +66,5 @@ export const menuItems = [
   { text: "Servicios", path: "/services" },
   { text: "Contacto", path: "/contact" },
   { text: "Acerca de", path: "/about" },
+  { text: "Clientes", path: "/clients" },
 ];
