@@ -8,10 +8,12 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import { useOrderStore } from "../../store/orders/order.store";
 
 const FormPay = ({ selectedProduct, setOrder, order, setOrderData, setOpenSuccess }) => {
   /* const getNumber = () => Math.floor(Math.random() * 1000) + 1; */
   const [amount, setAmount] = useState(1);
+  const createOrders = useOrderStore(state =>state.createOrders);
 
   const handleChange = (e) => {
     setOrder({
@@ -33,16 +35,16 @@ const FormPay = ({ selectedProduct, setOrder, order, setOrderData, setOpenSucces
     const orderData = {
       name: order.name,
       phone: order.phone,
-      correemailo: order.email,
+      email: order.email,
       direction: order.direction,
       productTitle: selectedProduct.title,
       priceProduct: selectedProduct.price,
-      id: selectedProduct.id,
+      productId: selectedProduct.id,
       amount: amount,
       total: calculateTotal(amount, selectedProduct.price),
-      identificador_empresa: 1
     };
     setOrderData(orderData);
+    createOrders(orderData);
     setOpenSuccess(true);
     console.log("🚀 ~ handleSubmit ~ orderData:", orderData);
   };

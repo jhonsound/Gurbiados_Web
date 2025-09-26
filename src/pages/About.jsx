@@ -22,12 +22,8 @@ const logoImage = "/vite.svg";
 
 const About = () => (
   <Box
-    minHeight="100vh"
-    sx={{
-      backgroundImage: `url(${bgImage})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
+  sx={{
+      minHeight:"90vh",
       py: { xs: 3, md: 8 },
       position: "relative",
       zIndex: 1,

@@ -12,7 +12,7 @@ export function Home() {
   const [openSuccess, setOpenSuccess] = useState(false);
   const [orderData, setOrderData] = useState(false);
   const [openModalProduct, setOpenModalProduct] = useState(false);
-  
+
   const [order, setOrder] = useState({
     name: "",
     phone: "",
@@ -34,25 +34,23 @@ export function Home() {
   return (
     <Box
       sx={{
-        backgroundImage: "url(/src/assets/guabidos1.jpeg)",
-        backgroundSize: "cover",
         minHeight: "90vh",
         position: "relative",
-      zIndex: 1,
-      "&:before": {
-        content: '""',
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        background: "rgba(255, 255, 255, 0.69)",
-        zIndex: 2,
-      },
-      "& > *": {
-        position: "relative",
-        zIndex: 3,
-      },
+        zIndex: 1,
+        "&:before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          background: "rgba(255, 255, 255, 0.69)",
+          zIndex: 2,
+        },
+        "& > *": {
+          position: "relative",
+          zIndex: 3,
+        },
       }}
     >
       <Logo />
