@@ -69,28 +69,28 @@ const ModalOrder = ({ open, handleClose, order }) => {
                 <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
                   Nombre:
                 </Typography>
-                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.customerName}</Typography>
+                <Typography variant="body1" color="warning.main" fontWeight="bold">{order?.name}</Typography>
               </Box>
               <Box display="flex" alignItems="center" gap={2}>
                 <EmailIcon color="primary" />
                 <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
                   Correo:
                 </Typography>
-                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.customerEmail}</Typography>
+                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.email}</Typography>
               </Box>
               <Box display="flex" alignItems="center" gap={2}>
                 <PhoneIcon color="primary" />
                 <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
                   Teléfono:
                 </Typography>
-                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.customerPhone}</Typography>
+                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.phone}</Typography>
               </Box>
               <Box display="flex" alignItems="center" gap={2}>
                 <HomeIcon color="primary" />
                 <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
                   Dirección:
                 </Typography>
-                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.customerDirection}</Typography>
+                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.direction}</Typography>
               </Box>
             </Stack>
           </Paper>
@@ -115,14 +115,14 @@ const ModalOrder = ({ open, handleClose, order }) => {
                 <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
                   <b>ID Producto:</b>
                 </Typography>
-                <Typography variant="body1" fontWeight="bold" color="warning.main">{order.id}</Typography>
+                <Typography variant="body1" fontWeight="bold" color="warning.main">{order.productId}</Typography>
               </Box>
               <Box display="flex" alignItems="center" gap={1}>
                 <ShoppingCartIcon color="warning" />
                 <Typography variant="body2" color="text.secondary" sx={{ minWidth: 80 }}>
                   Producto:
                 </Typography>
-                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.nameProduct}</Typography>
+                <Typography variant="body1" color="warning.main" fontWeight="bold">{order.name}</Typography>
               </Box>
               <Box display="flex" alignItems="center" gap={1}>
                 <NumbersIcon color="warning" />

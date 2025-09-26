@@ -20,45 +20,20 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
-// Simulación de clientes registrados
-const clientes = [
-  {
-    name: "Juan Pérez",
-    phone: "3001234567",
-    correemailo: "juanperez@email.com",
-    direction: "Cra 1 #23-45",
-    productTitle: "SUMMER COMBO",
-    priceProduct: 50000,
-    id: 1,
-    amount: 2,
-    total: 100000,
-    identificador_empresa: 1,
-  },
-  {
-    name: "Ana Gómez",
-    phone: "3019876543",
-    correemailo: "anagomez@email.com",
-    direction: "Av 5 #10-20",
-    productTitle: "BURGER BASH",
-    priceProduct: 50000,
-    id: 2,
-    amount: 1,
-    total: 50000,
-    identificador_empresa: 1,
-  },
-];
+import { useOrderStore } from "../store/orders/order.store";
 
 const Client = () => {
   const [tab, setTab] = useState(0);
+  const getOrders = useOrderStore((state) => state.getOrders);
+  const orders = useOrderStore((state) => state.orders);
+
+  React.useEffect(() => {
+    getOrders();
+  }, [getOrders]);
 
   return (
     <Box
-      minHeight="100vh"
       sx={{
-        background: "linear-gradient(135deg, #f8fafc 60%, #ffe5b4 100%)",
-        backgroundImage: "url(/src/assets/guabidos1.jpeg)",
-        backgroundSize: "cover",
         minHeight: "90vh",
         py: { xs: 3, md: 8 },
         position: "relative",
@@ -86,7 +61,7 @@ const Client = () => {
         align="center"
         mb={4}
       >
-        Dashboard de Clientes
+        Dashboard de Pedidos
       </Typography>
       <Paper
         sx={{
@@ -131,15 +106,15 @@ const Client = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {clientes.map((cliente, idx) => (
+              {orders.map((orders, idx) => (
                 <TableRow key={idx}>
-                  <TableCell>{cliente.name}</TableCell>
-                  <TableCell>{cliente.phone}</TableCell>
-                  <TableCell>{cliente.correemailo}</TableCell>
-                  <TableCell>{cliente.direction}</TableCell>
-                  <TableCell>{cliente.productTitle}</TableCell>
-                  <TableCell>{cliente.amount}</TableCell>
-                  <TableCell>${cliente.total.toLocaleString()} COP</TableCell>
+                  <TableCell>{orders.name}</TableCell>
+                  <TableCell>{orders.phone}</TableCell>
+                  <TableCell>{orders.email}</TableCell>
+                  <TableCell>{orders.direction}</TableCell>
+                  <TableCell>{orders.productTitle}</TableCell>
+                  <TableCell>{orders.amount}</TableCell>
+                  <TableCell>${orders.total.toLocaleString()} COP</TableCell>
                 </TableRow>
               ))}
             </TableBody>
@@ -153,7 +128,7 @@ const Client = () => {
           justifyContent="center"
           sx={{ maxWidth: 1000, mx: "auto" }}
         >
-          {clientes.map((cliente, idx) => (
+          {orders.map((orders, idx) => (
             <Grid item xs={12} md={6} key={idx}>
               <Paper
                 elevation={8}
@@ -192,7 +167,7 @@ const Client = () => {
                     color="white"
                     sx={{ letterSpacing: 1 }}
                   >
-                    {cliente.name}
+                    {orders.name}
                   </Typography>
                 </Box>
                 <Stack spacing={2} sx={{ px: 4, py: 3 }}>
@@ -203,7 +178,7 @@ const Client = () => {
                       color="text.secondary"
                       fontWeight={500}
                     >
-                      {cliente.phone}
+                      {orders.phone}
                     </Typography>
                   </Box>
                   <Box display="flex" alignItems="center" gap={2}>
@@ -213,7 +188,7 @@ const Client = () => {
                       color="text.secondary"
                       fontWeight={500}
                     >
-                      {cliente.correemailo}
+                      {orders.email}
                     </Typography>
                   </Box>
                   <Box display="flex" alignItems="center" gap={2}>
@@ -223,7 +198,7 @@ const Client = () => {
                       color="text.secondary"
                       fontWeight={500}
                     >
-                      {cliente.direction}
+                      {orders.direction}
                     </Typography>
                   </Box>
                   <Box display="flex" alignItems="center" gap={2}>
@@ -233,14 +208,14 @@ const Client = () => {
                       color="text.secondary"
                       fontWeight={600}
                     >
-                      Pedido: <b>{cliente.productTitle}</b> x {cliente.amount}
+                      Pedido: <b>{orders.productTitle}</b> x {orders.amount}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="primary"
                       fontWeight={700}
                     >
-                      Total: ${cliente.total.toLocaleString()} COP
+                      Total: ${orders.total.toLocaleString()} COP
                     </Typography>
                   </Box>
                 </Stack>
